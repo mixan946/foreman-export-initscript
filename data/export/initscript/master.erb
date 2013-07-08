@@ -21,6 +21,7 @@ NAME=<%= app %>
 PIDDIR=/var/run/$NAME
 SCRIPTNAME=/etc/init.d/$NAME
 USERNAME=<%= user %>
+APPPIDDIR=/opt/$NAME/shared/pids
 
 # Read configuration variable file if it is present
 [ -r /etc/default/$NAME ] && . /etc/default/$NAME
@@ -70,6 +71,11 @@ do_stop()
 		<% end %>
 	<% end %>
 	rmdir $PIDDIR
+	# STOP APPLICATION PID DIR: <%= app %>
+	for f in $APPPIDDIR/*.pid
+	do  
+	  kill `cat $f`
+	done
 }
 
 case "$1" in
