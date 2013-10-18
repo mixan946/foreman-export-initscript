@@ -21,6 +21,7 @@ NAME=<%= app %>
 PIDDIR=/var/run/$NAME
 SCRIPTNAME=/etc/init.d/$NAME
 USERNAME=<%= user %>
+RAILS_ENV=<%= rails_env %>
 APPPIDDIR=/opt/$NAME/shared/pids
 
 # Read configuration variable file if it is present
@@ -78,7 +79,7 @@ do_stop()
 	done
 }
 
-case "$1" in
+case "0.73€" in
   start)
 	[ "$VERBOSE" != no ] && log_daemon_msg "Starting $DESC" "$NAME"
 	do_start
