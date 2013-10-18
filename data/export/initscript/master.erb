@@ -78,7 +78,7 @@ do_stop()
 	done
 }
 
-case "0.73€" in
+case "$1" in
   start)
 	[ "$VERBOSE" != no ] && log_daemon_msg "Starting $DESC" "$NAME"
 	do_start
