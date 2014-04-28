@@ -21,7 +21,7 @@ NAME=<%= app %>
 PIDDIR=/var/run/$NAME
 SCRIPTNAME=/etc/init.d/$NAME
 USERNAME=<%= user %>
-APPPIDDIR=/opt/$NAME/shared/pids
+APPPIDDIR=/rails_projects/$NAME/shared/pids
 
 # Read configuration variable file if it is present
 [ -r /etc/default/$NAME ] && . /etc/default/$NAME
